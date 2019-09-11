@@ -14,15 +14,15 @@ import java.net.URL;
 import org.apache.commons.io.IOUtils;
 
 public class LauncherConstants {
-    public static final int VERSION_FORMAT = 21;
-    public static final String VERSION_STRING = "1.0.1";
+    public static final int VERSION_FORMAT = 22;
+    public static final String VERSION_STRING = "1.0.2";
     public static final int PROFILES_FORMAT = 1;
     public static final URI URL_REGISTER = LauncherConstants.constantURI("https://account.mojang.com/register");
     public static final String URL_JAR_FALLBACK = "https://s3.amazonaws.com/Minecraft.Download/";
     public static final String URL_RESOURCE_BASE = "http://resources.download.minecraft.net/";
     public static final String URL_LIBRARY_BASE = "https://libraries.minecraft.net/";
     //public static final String URL_WEBSITE = "http://mcupdate.tumblr.com"; // The old legacy blog (no longer updated)
-    public static final String URL_WEBSITE = "http://mclaunch.github.io/mcupdate";
+    public static final String URL_WEBSITE = "http://electromaster232.github.io/mcupdate";
     public static final String URL_SUPPORT = "http://help.mojang.com/?ref=launcher";
     public static final String URL_STATUS_CHECKER = "http://status.mojang.com/check";
     public static final int UNVERSIONED_BOOTSTRAP_VERSION = 0;

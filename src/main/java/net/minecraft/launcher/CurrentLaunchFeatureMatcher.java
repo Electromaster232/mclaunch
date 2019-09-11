@@ -22,7 +22,7 @@ implements CompatibilityRule.FeatureMatcher {
     @Override
     public boolean hasFeature(String name, Object value) {
         if (name.equals("is_demo_user")) {
-            return Objects.equal(this.auth.getSelectedProfile() == null, value);
+            return false;
         }
         if (name.equals("has_custom_resolution")) {
             return Objects.equal(this.profile.getResolution() != null, value);

@@ -181,7 +181,7 @@ implements GameRunnerListener {
 
     public static enum PlayStatus {
         LOADING("Loading...", false),
-        CAN_PLAY_DEMO("Play Demo", true),
+        CAN_PLAY_DEMO("Play", true),
         CAN_PLAY_ONLINE("Play", true),
         CAN_PLAY_OFFLINE("Play Offline", true),
         ALREADY_PLAYING("Already Playing...", false),

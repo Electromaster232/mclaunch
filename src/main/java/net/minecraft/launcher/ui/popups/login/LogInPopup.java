@@ -38,7 +38,7 @@ public class LogInPopup extends JPanel implements ActionListener {
     private final Launcher minecraftLauncher;
     private final Callback callback;
     private final AuthErrorForm errorForm;
-    private final ExistingUserListForm existingUserListForm;
+    //private final ExistingUserListForm existingUserListForm;
     private final LogInForm logInForm;
     private final JButton loginButton = new JButton("Log In");
     private final JButton registerButton = new JButton("Register");
@@ -49,7 +49,7 @@ public class LogInPopup extends JPanel implements ActionListener {
         this.minecraftLauncher = minecraftLauncher;
         this.callback = callback;
         this.errorForm = new AuthErrorForm(this);
-        this.existingUserListForm = new ExistingUserListForm(this);
+        //this.existingUserListForm = new ExistingUserListForm(this);
         this.logInForm = new LogInForm(this);
         this.createInterface();
         this.loginButton.addActionListener(this);
@@ -74,7 +74,7 @@ public class LogInPopup extends JPanel implements ActionListener {
             e.printStackTrace();
         }
         if (!this.minecraftLauncher.getProfileManager().getAuthDatabase().getKnownNames().isEmpty()) {
-            this.add(this.existingUserListForm);
+            //this.add(this.existingUserListForm);
         }
         this.add(this.errorForm);
         this.add(this.logInForm);
@@ -128,9 +128,9 @@ public class LogInPopup extends JPanel implements ActionListener {
         return this.errorForm;
     }
 
-    public ExistingUserListForm getExistingUserListForm() {
-        return this.existingUserListForm;
-    }
+    //public ExistingUserListForm getExistingUserListForm() {
+        //return this.existingUserListForm;
+    //}
 
     public void setLoggedIn(String uuid) {
         this.callback.onLogIn(uuid);

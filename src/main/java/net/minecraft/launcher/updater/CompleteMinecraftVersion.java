@@ -343,9 +343,6 @@ implements CompleteVersion {
                 for (String arg : this.minecraftArguments.split(" ")) {
                     builder.withArguments(substitutor.replace(arg));
                 }
-                if (featureMatcher.hasFeature("is_demo_user", true)) {
-                    builder.withArguments("--demo");
-                }
                 if (featureMatcher.hasFeature("has_custom_resolution", true)) {
                     builder.withArguments("--width", substitutor.replace("${resolution_width}"), "--height", substitutor.replace("${resolution_height}"));
                 }

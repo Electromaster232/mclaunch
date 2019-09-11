@@ -104,7 +104,10 @@ public class LogInForm extends JPanel implements ActionListener {
         this.add((Component)forgotPasswordLabel, constraints);
         this.createUserDropdownPanel(labelFont);
         this.add((Component)this.userDropdownPanel, constraints);
+        //this.add(Box.createVerticalStrut(10), constraints);
         this.add(Box.createVerticalStrut(10), constraints);
+        JLabel crackedNotice = new JLabel("Don't have an account? Type none- to be logged into an OFFLINE account.");
+        this.add((Component)crackedNotice, constraints);
     }
 
     protected void createUserDropdownPanel(Font labelFont) {
@@ -130,6 +133,13 @@ public class LogInForm extends JPanel implements ActionListener {
     }
 
     public void tryLogIn() {
+
+        if (this.usernameField.getText().contains("none-")){
+            //LogInForm.this.popup.getMinecraftLauncher().getProfileManager().getAuthDatabase().register("xdddddddd-trololololol", LogInForm.this.authentication);
+            LogInForm.this.popup.setLoggedIn("xdddddddd-trololololol");
+
+
+        }
         if (this.authentication.isLoggedIn() && this.authentication.getSelectedProfile() == null && ArrayUtils.isNotEmpty(this.authentication.getAvailableProfiles())) {
             this.popup.setCanLogIn(false);
             GameProfile selectedProfile = null;

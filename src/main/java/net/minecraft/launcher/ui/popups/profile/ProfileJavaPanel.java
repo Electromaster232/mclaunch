@@ -73,7 +73,7 @@ extends JPanel {
             this.javaArgsField.setText(args);
         } else {
             this.javaArgsCustom.setSelected(false);
-            this.javaArgsField.setText("-Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M");
+            this.javaArgsField.setText("-Xmx1G -XX:+UseConcMarkSweepGC -XX:-UseAdaptiveSizePolicy -Xmn128M");
         }
         this.updateJavaArgsState();
     }

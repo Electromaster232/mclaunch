@@ -191,7 +191,7 @@ implements GameProcessRunnable {
             processBuilder.withArguments(profileArgs.split(" "));
         } else {
             boolean is32Bit = "32".equals(System.getProperty("sun.arch.data.model"));
-            String defaultArgument = is32Bit ? "-Xmx512M -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M" : "-Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M";
+            String defaultArgument = is32Bit ? "-Xmx512M -XX:+UseConcMarkSweepGC -XX:-UseAdaptiveSizePolicy -Xmn128M" : "-Xmx1G -XX:+UseConcMarkSweepGC -XX:-UseAdaptiveSizePolicy -Xmn128M";
             processBuilder.withArguments(defaultArgument.split(" "));
         }
         CompatibilityRule.FeatureMatcher featureMatcher = this.createFeatureMatcher();

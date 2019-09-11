@@ -38,7 +38,7 @@ RefreshedProfilesListener,
 UserChangedListener {
     private final Launcher minecraftLauncher;
     private final JButton playButton = new JButton("Play");
-    private final JLabel demoHelpLink = new JLabel("(Why can I only play demo?)");
+    private final JLabel demoHelpLink = new JLabel("");
 
     public PlayButtonPanel(Launcher minecraftLauncher) {
         this.minecraftLauncher = minecraftLauncher;

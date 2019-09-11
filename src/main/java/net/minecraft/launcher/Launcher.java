@@ -110,6 +110,10 @@ public class Launcher {
             System.exit(0);
             throw new Error("Outdated bootstrap");
         }
+        LOGGER.info("Attention! This is the Restricted Minecraft Launcher designed for school or other restricted networks");
+        LOGGER.info("By default, it is able to login to 'cracked' accounts, and should not be used when the normal launcher can");
+        LOGGER.info("Updates can be obtained through the SMB Server.");
+        LOGGER.info("----------------------------------------------------------");
         LOGGER.info(this.userInterface.getTitle() + " (through bootstrap " + bootstrapVersion + ") started on " + OperatingSystem.getCurrentPlatform().getName() + "...");
         LOGGER.info("Current time is " + DateFormat.getDateTimeInstance(2, 2, Locale.US).format(new Date()));
         if (!OperatingSystem.getCurrentPlatform().isSupported()) {
@@ -218,7 +222,7 @@ public class Launcher {
                         if (auth.getSelectedProfile() != null) {
                             Launcher.this.profileManager.setSelectedUser(UUIDTypeAdapter.fromUUID(auth.getSelectedProfile().getId()));
                         } else {
-                            Launcher.this.profileManager.setSelectedUser("demo-" + auth.getUserID());
+                            Launcher.this.profileManager.setSelectedUser(auth.getUserID());
                         }
                     }
                 }
