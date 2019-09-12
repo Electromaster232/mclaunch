@@ -113,7 +113,7 @@ implements MinecraftUserInterface {
 
     public void initializeFrame() {
         this.frame.getContentPane().removeAll();
-        this.frame.setTitle("Minecraft Launcher " + LauncherConstants.getVersionName() + LauncherConstants.PROPERTIES.getEnvironment().getTitle());
+        this.frame.setTitle("RS Minecraft Launcher " + LauncherConstants.getVersionName() + LauncherConstants.PROPERTIES.getEnvironment().getTitle());
         this.frame.setPreferredSize(new Dimension(900, 580));
         this.frame.setDefaultCloseOperation(2);
         this.frame.addWindowListener(new WindowAdapter(){
@@ -348,7 +348,7 @@ implements MinecraftUserInterface {
 
     @Override
     public String getTitle() {
-        return "Minecraft Launcher " + LauncherConstants.getVersionName();
+        return "RS Minecraft Launcher " + LauncherConstants.getVersionName();
     }
 
     public JFrame getFrame() {
