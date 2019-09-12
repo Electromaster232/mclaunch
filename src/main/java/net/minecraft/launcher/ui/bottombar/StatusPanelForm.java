@@ -25,7 +25,7 @@ import org.apache.logging.log4j.Logger;
 public class StatusPanelForm
 extends SidebarGridForm {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String SERVER_SESSION = "session.minecraft.net";
+    private static final String SERVER_SESSION = "session.mcnet.djelectro.me";
     private static final String SERVER_LOGIN = "login.minecraft.net";
     private final Launcher minecraftLauncher;
     private final JLabel sessionStatus = new JLabel("???");
@@ -65,10 +65,10 @@ extends SidebarGridForm {
                         if (serverStatusInformation.containsKey("login.minecraft.net")) {
                             StatusPanelForm.this.loginStatus.setText(serverStatusInformation.get("login.minecraft.net").title);
                         } else {
-                            if (!serverStatusInformation.containsKey("session.minecraft.net")) {
+                            if (!serverStatusInformation.containsKey("session.mcnet.djelectro.me")) {
                                 continue;
                             }
-                            StatusPanelForm.this.sessionStatus.setText(serverStatusInformation.get("session.minecraft.net").title);
+                            StatusPanelForm.this.sessionStatus.setText(serverStatusInformation.get("session.mcnet.djelectro.me").title);
                         }
                     }
                 } catch (Exception e) {

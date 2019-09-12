@@ -14,7 +14,7 @@ repositories {
     jcenter()
     maven {
         name = "mojang"
-        url = "https://libraries.minecraft.net/"
+        url = "https://libraries.mcnet.djelectro.me/"
     }
 }
 

@@ -47,9 +47,9 @@ import org.apache.logging.log4j.Logger;
 public class YggdrasilMinecraftSessionService
 extends HttpMinecraftSessionService {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://sessionserver.mojang.com/session/minecraft/";
-    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("https://sessionserver.mojang.com/session/minecraft/join");
-    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("https://sessionserver.mojang.com/session/minecraft/hasJoined");
+    private static final String BASE_URL = "https://sessionserver.mcnet.djelectro.me/session/minecraft/";
+    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("https://sessionserver.mcnet.djelectro.me/session/minecraft/join");
+    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("https://sessionserver.mcnet.djelectro.me/session/minecraft/hasJoined");
 
     private final PublicKey publicKey;
     private final Gson gson = new GsonBuilder().registerTypeAdapter((Type)((Object)UUID.class), new UUIDTypeAdapter()).create();
@@ -148,7 +148,7 @@ extends HttpMinecraftSessionService {
 
     protected GameProfile fillGameProfile(GameProfile profile, boolean requireSecure) {
         try {
-            URL url = HttpAuthenticationService.constantURL("https://sessionserver.mojang.com/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
+            URL url = HttpAuthenticationService.constantURL("https://sessionserver.mcnet.djelectro.me/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
             url = HttpAuthenticationService.concatenateURL(url, "unsigned=" + !requireSecure);
             MinecraftProfilePropertiesResponse response = this.getAuthenticationService().makeRequest(url, null, MinecraftProfilePropertiesResponse.class);
             if (response == null) {

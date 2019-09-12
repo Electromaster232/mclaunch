@@ -1,7 +1,4 @@
-## Intellij
-.idea
-.idea/hotswap_agent.xml
-/out/
+
 
 ## Gradle
 .gradle

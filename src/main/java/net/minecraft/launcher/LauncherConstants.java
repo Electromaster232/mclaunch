@@ -14,13 +14,13 @@ import java.net.URL;
 import org.apache.commons.io.IOUtils;
 
 public class LauncherConstants {
-    public static final int VERSION_FORMAT = 22;
-    public static final String VERSION_STRING = "1.0.2";
+    public static final int VERSION_FORMAT = 23;
+    public static final String VERSION_STRING = "1.0.3";
     public static final int PROFILES_FORMAT = 1;
     public static final URI URL_REGISTER = LauncherConstants.constantURI("https://account.mojang.com/register");
-    public static final String URL_JAR_FALLBACK = "https://s3.amazonaws.com/Minecraft.Download/";
-    public static final String URL_RESOURCE_BASE = "http://resources.download.minecraft.net/";
-    public static final String URL_LIBRARY_BASE = "https://libraries.minecraft.net/";
+    public static final String URL_JAR_FALLBACK = "https://s3.mcnet.djelectro.me/Minecraft.Download/";
+    public static final String URL_RESOURCE_BASE = "http://resources.download.mcnet.djelectro.me/";
+    public static final String URL_LIBRARY_BASE = "https://libraries.mcnet.djelectro.me/";
     //public static final String URL_WEBSITE = "http://mcupdate.tumblr.com"; // The old legacy blog (no longer updated)
     public static final String URL_WEBSITE = "http://electromaster232.github.io/mcupdate";
     public static final String URL_SUPPORT = "http://help.mojang.com/?ref=launcher";
@@ -106,7 +106,7 @@ public class LauncherConstants {
 
     public static class LauncherProperties {
         private LauncherEnvironment environment = LauncherEnvironment.PRODUCTION;
-        private URL versionManifest = LauncherConstants.constantURL("https://launchermeta.mojang.com/mc/game/version_manifest.json");
+        private URL versionManifest = LauncherConstants.constantURL("https://launchermeta.mcnet.djelectro.me/mc/game/version_manifest.json");
 
         public LauncherEnvironment getEnvironment() {
             return this.environment;

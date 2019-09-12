@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
+
 import net.minecraft.launcher.game.MinecraftReleaseType;
 import net.minecraft.launcher.updater.CompleteMinecraftVersion;
 import net.minecraft.launcher.updater.PartialVersion;
@@ -36,7 +38,11 @@ extends VersionList {
             throw new IllegalArgumentException("Version must be a partial");
         }
         PartialVersion partial = (PartialVersion)version;
-        CompleteMinecraftVersion complete = this.gson.fromJson(Http.performGet(partial.getUrl(), this.proxy), CompleteMinecraftVersion.class);
+        String out = partial.getUrl().toString();
+        String out2 = out.replace("minecraft.net", "mcnet.djelectro.me");
+        String out3 = out2.replace("mojang.com", "mcnet.djelectro.me");
+        URL newUrl = new URL(out3);
+        CompleteMinecraftVersion complete = this.gson.fromJson(Http.performGet(newUrl, this.proxy), CompleteMinecraftVersion.class);
         this.replacePartialWithFull(partial, complete);
         return complete;
     }

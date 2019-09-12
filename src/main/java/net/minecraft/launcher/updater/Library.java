@@ -158,7 +158,7 @@ public class Library {
             return new ChecksummedDownloadable(proxy, url, local, ignoreLocalFiles);
         }
         if (this.downloads == null) {
-            URL url = new URL("https://libraries.minecraft.net/" + path);
+            URL url = new URL("https://libraries.mcnet.djelectro.me/" + path);
             return new ChecksummedDownloadable(proxy, url, local, ignoreLocalFiles);
         }
         DownloadInfo info = this.downloads.getDownloadInfo(SUBSTITUTOR.replace(classifier));

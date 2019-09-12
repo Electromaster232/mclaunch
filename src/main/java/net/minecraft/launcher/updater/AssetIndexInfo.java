@@ -15,7 +15,7 @@ extends DownloadInfo {
 
     public AssetIndexInfo(String id) {
         this.id = id;
-        this.url = LauncherConstants.constantURL("https://s3.amazonaws.com/Minecraft.Download/indexes/" + id + ".json");
+        this.url = LauncherConstants.constantURL("https://s3.mcnet.djelectro.me/Minecraft.Download/indexes/" + id + ".json");
         this.known = false;
     }
 

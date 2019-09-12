@@ -57,7 +57,7 @@ public class Main {
         LOGGER.debug("About to create JFrame.");
         Proxy finalProxy = proxy;
         JFrame frame = new JFrame();
-        frame.setTitle("Minecraft Launcher " + LauncherConstants.getVersionName() + LauncherConstants.PROPERTIES.getEnvironment().getTitle());
+        frame.setTitle("RS Minecraft Launcher " + LauncherConstants.getVersionName() + LauncherConstants.PROPERTIES.getEnvironment().getTitle());
         frame.setPreferredSize(new Dimension(900, 580));
         try {
             InputStream in = Launcher.class.getResourceAsStream("/favicon.png");
@@ -81,6 +81,9 @@ public class Main {
         }
         frame.setLocationRelativeTo(null);
         LOGGER.debug("End of main.");
+
+        LauncherVersionChecker lvc = new LauncherVersionChecker();
+        lvc.runCheck(proxy);
     }
 
     public static File getWorkingDirectory() {

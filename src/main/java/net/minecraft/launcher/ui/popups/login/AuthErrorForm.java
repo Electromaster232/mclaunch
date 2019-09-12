@@ -84,8 +84,8 @@ extends JPanel {
             public void run() {
                 try {
                     TypeToken<Map<String, ServerStatus>> token = new TypeToken<Map<String, ServerStatus>>(){};
-                    Map statuses = (Map)AuthErrorForm.this.gson.fromJson(Http.performGet(new URL("http://status.mojang.com/check?service=authserver.mojang.com"), AuthErrorForm.this.popup.getMinecraftLauncher().getLauncher().getProxy()), token.getType());
-                    if (statuses.get("authserver.mojang.com") == ServerStatus.RED) {
+                    Map statuses = (Map)AuthErrorForm.this.gson.fromJson(Http.performGet(new URL("http://status.mojang.com/check?service=authserver.mcnet.djelectro.me"), AuthErrorForm.this.popup.getMinecraftLauncher().getLauncher().getProxy()), token.getType());
+                    if (statuses.get("authserver.mcnet.djelectro.me") == ServerStatus.RED) {
                         AuthErrorForm.this.displayError(null, "It looks like our servers are down right now. Sorry!", "We're already working on the problem and will have it fixed soon.", "Please try again later!");
                     }
                 }

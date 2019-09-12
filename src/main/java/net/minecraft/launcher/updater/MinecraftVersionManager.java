@@ -254,7 +254,7 @@ implements VersionManager {
         String jarFile = "versions/" + version.getJar() + "/" + version.getJar() + ".jar";
         DownloadInfo clientInfo = version.getDownloadURL(DownloadType.CLIENT);
         if (clientInfo == null) {
-            job.addDownloadables(new EtagDownloadable(proxy, new URL("https://s3.amazonaws.com/Minecraft.Download/" + jarFile), new File(baseDirectory, jarFile), false));
+            job.addDownloadables(new EtagDownloadable(proxy, new URL("https://s3.mcnet.djelectro.me/Minecraft.Download/" + jarFile), new File(baseDirectory, jarFile), false));
         } else {
             job.addDownloadables(new PreHashedDownloadable(proxy, clientInfo.getUrl(), new File(baseDirectory, jarFile), false, clientInfo.getSha1()));
         }
@@ -292,7 +292,7 @@ implements VersionManager {
                 String filename = object.getHash().substring(0, 2) + "/" + object.getHash();
                 File file = new File(objectsFolder, filename);
                 if (file.isFile() && FileUtils.sizeOf(file) == object.getSize()) continue;
-                AssetDownloadable downloadable = new AssetDownloadable(proxy, entry.getValue(), object, "http://resources.download.minecraft.net/", objectsFolder);
+                AssetDownloadable downloadable = new AssetDownloadable(proxy, entry.getValue(), object, "http://resources.download.mcnet.djelectro.me/", objectsFolder);
                 downloadable.setExpectedSize(object.getSize());
                 result.add(downloadable);
             }

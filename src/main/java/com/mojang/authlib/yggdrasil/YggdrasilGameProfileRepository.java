@@ -24,8 +24,8 @@ import org.apache.logging.log4j.Logger;
 public class YggdrasilGameProfileRepository
 implements GameProfileRepository {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://api.mojang.com/";
-    private static final String SEARCH_PAGE_URL = "https://api.mojang.com/profiles/";
+    private static final String BASE_URL = "https://api.mcnet.djelectro.me/";
+    private static final String SEARCH_PAGE_URL = "https://api.mcnet.djelectro.me/profiles/";
 
     private static final int ENTRIES_PER_PAGE = 2;
     private static final int MAX_FAIL_COUNT = 3;
@@ -52,7 +52,7 @@ implements GameProfileRepository {
             do {
                 failed = false;
                 try {
-                    final ProfileSearchResultsResponse response = this.authenticationService.makeRequest(HttpAuthenticationService.constantURL("https://api.mojang.com/profiles/" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);
+                    final ProfileSearchResultsResponse response = this.authenticationService.makeRequest(HttpAuthenticationService.constantURL("https://api.mcnet.djelectro.me/profiles/" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);
                     failCount = 0;
                     YggdrasilGameProfileRepository.LOGGER.debug("Page {} returned {} results, parsing", page,
                             response.getProfiles().length);

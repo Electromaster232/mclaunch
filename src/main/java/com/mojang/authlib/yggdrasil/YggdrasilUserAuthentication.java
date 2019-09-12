@@ -30,12 +30,12 @@ import org.apache.logging.log4j.Logger;
 public class YggdrasilUserAuthentication
 extends HttpUserAuthentication {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://authserver.mojang.com/";
-    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("https://authserver.mojang.com/authenticate");
-    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("https://authserver.mojang.com/refresh");
-    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("https://authserver.mojang.com/validate");
-    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("https://authserver.mojang.com/invalidate");
-    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("https://authserver.mojang.com/signout");
+    private static final String BASE_URL = "https://authserver.mcnet.djelectro.me/";
+    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("https://authserver.mcnet.djelectro.me/authenticate");
+    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("https://authserver.mcnet.djelectro.me/refresh");
+    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("https://authserver.mcnet.djelectro.me/validate");
+    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("https://authserver.mcnet.djelectro.me/invalidate");
+    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("https://authserver.mcnet.djelectro.me/signout");
 
     private static final String STORAGE_KEY_ACCESS_TOKEN = "accessToken";
     private final Agent agent;
