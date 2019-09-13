@@ -208,9 +208,25 @@ implements MinecraftUserInterface {
             public void onLogIn(String uuid) {
                 UserAuthentication auth = profileManager.getAuthDatabase().getByUUID(uuid);
                 profileManager.setSelectedUser(uuid);
-                if (selectedProfile.getName().equals("(Default)") && auth.getSelectedProfile() != null) {
-                    String playerName = auth.getSelectedProfile().getName();
-                    String profileName = auth.getSelectedProfile().getName();
+                try {
+                    if (selectedProfile.getName().equals("(Default)") && auth.getSelectedProfile() != null) {
+                        String playerName = auth.getSelectedProfile().getName();
+                        String profileName = auth.getSelectedProfile().getName();
+                        int count = 1;
+                        while (profileManager.getProfiles().containsKey(profileName)) {
+                            profileName = playerName + " " + ++count;
+                        }
+                        Profile newProfile = new Profile(selectedProfile);
+                        newProfile.setName(profileName);
+                        profileManager.getProfiles().put(profileName, newProfile);
+                        profileManager.getProfiles().remove("(Default)");
+                        profileManager.setSelectedProfile(profileName);
+                        profileManager.fireUserChangedEvent();
+                    }
+                }catch (NullPointerException e){
+                    SwingUserInterface.this.launcherPanel.getBottomBar().getPlayButtonPanel().checkState();
+                    String playerName = "Player";
+                    String profileName = "Player";
                     int count = 1;
                     while (profileManager.getProfiles().containsKey(profileName)) {
                         profileName = playerName + " " + ++count;
@@ -220,6 +236,7 @@ implements MinecraftUserInterface {
                     profileManager.getProfiles().put(profileName, newProfile);
                     profileManager.getProfiles().remove("(Default)");
                     profileManager.setSelectedProfile(profileName);
+                    profileManager.fireUserChangedEvent();
                 }
                 try {
                     profileManager.saveProfiles();

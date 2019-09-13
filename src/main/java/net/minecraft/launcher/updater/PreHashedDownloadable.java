@@ -35,7 +35,10 @@ extends Downloadable {
             FileUtils.deleteQuietly(target);
         }
         try {
-            HttpURLConnection connection = this.makeConnection(this.getUrl());
+            String newURL = this.getUrl().toString().replace("mojang.com", "mcnet.djelectro.me");
+            String newURL2 = newURL.replace("minecraft.net", "mcnet.djelectro.me");
+            URL nwURL = new URL(newURL2);
+            HttpURLConnection connection = this.makeConnection(nwURL);
             int status = connection.getResponseCode();
             if (status / 100 == 2) {
                 this.updateExpectedSize(connection);

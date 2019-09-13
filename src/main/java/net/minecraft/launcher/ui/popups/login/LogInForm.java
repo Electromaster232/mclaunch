@@ -33,6 +33,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import net.minecraft.launcher.Launcher;
 import net.minecraft.launcher.LauncherConstants;
+import net.minecraft.launcher.SwingUserInterface;
 import net.minecraft.launcher.profile.AuthenticationDatabase;
 import net.minecraft.launcher.profile.ProfileManager;
 import net.minecraft.launcher.ui.popups.login.AuthErrorForm;
@@ -106,7 +107,7 @@ public class LogInForm extends JPanel implements ActionListener {
         this.add((Component)this.userDropdownPanel, constraints);
         //this.add(Box.createVerticalStrut(10), constraints);
         this.add(Box.createVerticalStrut(10), constraints);
-        JLabel crackedNotice = new JLabel("Don't have an account? Type none- to be logged into an OFFLINE account.");
+        JLabel crackedNotice = new JLabel("Don't have an account? Type none to be logged into an OFFLINE account.");
         this.add((Component)crackedNotice, constraints);
     }
 
@@ -134,9 +135,13 @@ public class LogInForm extends JPanel implements ActionListener {
 
     public void tryLogIn() {
 
-        if (this.usernameField.getText().contains("none-")){
-            //LogInForm.this.popup.getMinecraftLauncher().getProfileManager().getAuthDatabase().register("xdddddddd-trololololol", LogInForm.this.authentication);
-            LogInForm.this.popup.setLoggedIn("xdddddddd-trololololol");
+        if (this.usernameField.getText().contains("none")){
+            LogInForm.this.popup.getMinecraftLauncher().getProfileManager().getAuthDatabase().register("demo-xddddddddtrololololol", LogInForm.this.authentication);
+            LogInForm.this.popup.setLoggedIn("xddddddddtrololololol");
+            this.authentication.setPassword("12345");
+            LogInForm.this.popup.repack();
+
+            this.popup.setCanLogIn(true);
 
 
         }

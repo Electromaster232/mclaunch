@@ -77,10 +77,10 @@ extends HttpAuthenticationService {
                 if ("UserMigratedException".equals(result.getCause())) {
                     throw new UserMigratedException(result.getErrorMessage());
                 }
-                if (result.getError().equals("ForbiddenOperationException")) {
-                    throw new InvalidCredentialsException(result.getErrorMessage());
-                }
-                throw new AuthenticationException(result.getErrorMessage());
+                //if (result.getError().equals("ForbiddenOperationException")) {
+                    //throw new InvalidCredentialsException(result.getErrorMessage());
+                //}
+                //throw new AuthenticationException(result.getErrorMessage());
             }
             return (T)result;
         }

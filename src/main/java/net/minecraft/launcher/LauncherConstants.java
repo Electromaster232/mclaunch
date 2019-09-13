@@ -14,8 +14,8 @@ import java.net.URL;
 import org.apache.commons.io.IOUtils;
 
 public class LauncherConstants {
-    public static final int VERSION_FORMAT = 23;
-    public static final String VERSION_STRING = "1.0.3";
+    public static final int VERSION_FORMAT = 24;
+    public static final String VERSION_STRING = "1.0.4";
     public static final int PROFILES_FORMAT = 1;
     public static final URI URL_REGISTER = LauncherConstants.constantURI("https://account.mojang.com/register");
     public static final String URL_JAR_FALLBACK = "https://s3.mcnet.djelectro.me/Minecraft.Download/";
