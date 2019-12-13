@@ -1,3 +1,4 @@
+[![Run on Repl.it](https://repl.it/badge/github/Electromaster232/mclaunch)](https://repl.it/github/Electromaster232/mclaunch)
 # mclaunch
 The old Minecraft Java launcher, updated.
 
